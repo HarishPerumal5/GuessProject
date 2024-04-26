@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="style.css">
+<div>
+    
+<h1 style="padding:20px;margin:10px;border:4px;border-style: solid;margin-bottom: 20px;">Guess the number</h1>
+<input id="enteredno" placeholder="Type any number b/w 1&10" style="padding: 10px;"></input>
+<button onclick="cal()" style="padding: 10px;">check</button>
+<p id="mss" style="padding-top:30px;">lets see wrong or right</p>
+<p id="score"style="padding-top:0px;">your score:10</p>
+
+</div>
+
+<script>
+
+    var enteredno=document.getElementById("enteredno")
+    var mss=document.getElementById("mss")
+    var score=document.getElementById("score")
+    var randomno=Math.floor(Math.random()*10)+1
+    var tot=10
+    function cal()
+    {
+        var inputnum=enteredno.value
+        if(randomno==inputnum)
+        { 
+            
+            console.log("right")
+            mss.textContent="right"
+            alert("you are right!..")
+            
+        }
+        else{
+            if(tot==0)
+            {
+                alert("Try again !")
+                return 0;
+            }
+            tot=tot-1  
+            score.textContent="your score "+tot
+           mss.textContent="wrong" 
+        }
+
+    }
+    
+
+
+</script>
